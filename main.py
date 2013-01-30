@@ -1,8 +1,10 @@
 #!/usr/bin/python
 import kivy
-from paperflight.interface.main import *
-kivy.require('1.5.1') # replace with your current kivy version !
+import interface.main as main
 
+kivy.require('1.5.1')
 
 if __name__ == '__main__':
-    MyApp().run()
+  main = main.paperApp()
+  main.run()
+  

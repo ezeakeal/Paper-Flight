@@ -1,0 +1,53 @@
+#:import random random.random
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import SwapTransition kivy.uix.screenmanager.SwapTransition
+#:import WipeTransition kivy.uix.screenmanager.WipeTransition
+# #:import FadeTransition kivy.uix.screenmanager.FadeTransition
+<Menu>:
+    canvas:
+        Color:
+            hsv: 0.3, .5, .3
+        Rectangle:
+            size: self.size
+
+    Label:
+        font_size: 42
+        text: "Paper Flight POC"
+
+    BoxLayout:
+        size_hint: .6, None
+        height: 250
+        pos_hint: {'center_x': .5}
+        orientation: 'vertical'
+
+        Button:
+            text: 'Play'
+            on_press: root.manager.current = 'game'
+        Button:
+            text: 'Settings'
+            on_press: root.manager.current = 'settings'
+        Button:
+            text: 'Quit'
+
+<SettingsMenu>:
+    canvas:
+        Color:
+            hsv: 0.4, .5, .3
+        Rectangle:
+            size: self.size
+
+    Label:
+        font_size: 42
+        text: "Settings"
+
+    BoxLayout:
+        size_hint: .6, None
+        height: 250
+        pos_hint: {'center_x': .5}
+        orientation: 'vertical'
+
+        Button:
+            text: 'My setting button'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'mainmenu'
